@@ -22,7 +22,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      # Checkout the repo
+      # Checkout the repository
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -30,14 +30,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
-          enablement: true   # <-- ensures Pages is enabled automatically
+          enablement: true  # ensures Pages is enabled automatically
 
-      # Upload site files (only your static site)
-      - name: Upload artifact
+      # Upload only the files for your site
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'          # use '.' if site files are in repo root
-
+          # Make sure index.html is in the folder specified here
+          path: '.'   # use '.' if your index.html is at repo root
+          
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
