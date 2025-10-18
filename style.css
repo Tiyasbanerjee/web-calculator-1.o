@@ -30,14 +30,29 @@ body {
   margin: 0;                           
 }
 
-/* Calculator container */
+
 .calculator {
-  background-color: rgba(195, 103, 103, 0.548);  /* Semi-transparent dark red */
-  padding: 20px;                              /* Space inside calculator */
-  border-radius: 10px;                        /* Rounded corners */
-  box-shadow: 0 4px 15px rgba(76, 204, 127, 0.2); /* Subtle shadow */
-  width: 250px;                               /* Fixed width */
+  background:
+    radial-gradient(
+      circle at 0% 0%, 
+      rgb(110, 255, 209) 40%, 
+      transparent 90%
+    ),
+
+    radial-gradient(
+      circle at 100% 100%, 
+      rgba(52, 174, 255, 0.844) 30%, 
+      transparent 80%
+    );
+  
+  
+  padding: 20px;                              
+  border-radius: 10px;                      
+  box-shadow: 20px 20px 60px rgb(255, 255, 255); 
+  height: 60vh;
+  width: 25vw;                             
 }
+
 
 /* Display input */
 #display {
