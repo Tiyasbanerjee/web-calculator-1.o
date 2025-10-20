@@ -1,20 +1,20 @@
-// Function to append numbers or operators to the display
+
 function append_val(x){
-    document.getElementById("display").value += x; // use "display", not "result"
+    document.getElementById("out").value += x; 
 }
 
-// Function to clear the display
+
 function clear_val(){
-    document.getElementById("display").value = "";
+    document.getElementById("out").value = "";
 }
 
-// Function to calculate the expression
+
 function calculate(){
     try {
-        let x = document.getElementById("display").value;
-        let y = eval(x);  // evaluate the expression
-        document.getElementById("display").value = y; // show result
+        let x = document.getElementById("out").value;
+        let y = eval(x);  
+        document.getElementById("out").value = y; 
     } catch(err) {
-        document.getElementById("display").value = "Error"; // show error if invalid
+        document.getElementById("out").value = "Error"; 
     }
 }
