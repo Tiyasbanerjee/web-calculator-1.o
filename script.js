@@ -1,7 +1,16 @@
 
-function append_val(x){
+
+function append_oppo(x){
+    let val = document.getElementById("out").value; 
+    if (val.length > 0 && !isNaN(val[val.length - 1])) {
+        document.getElementById("out").value += x; 
+    }  
+    }
+
+function append_num(x){
     document.getElementById("out").value += x; 
 }
+
 
 
 function clear_val(){
@@ -10,11 +19,15 @@ function clear_val(){
 
 
 function calculate(){
-    try {
-        let x = document.getElementById("out").value;
-        let y = eval(x);  
-        document.getElementById("out").value = y; 
+    let val = document.getElementById("out").value;
+    try {     
+        let y = eval(val);  
+        if(y != undefined){
+            document.getElementById("out").value = y;
+        }else{
+            document.getElementById("out").value = "";
+        }
     } catch(err) {
-        document.getElementById("out").value = "Error"; 
+        document.getElementById("out").value = ""; 
     }
 }
